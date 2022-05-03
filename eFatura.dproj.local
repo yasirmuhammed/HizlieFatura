@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.784,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\CariKart.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.188,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaOlustur.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFatura.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.293,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\SabitDM.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.596,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Ana.dfm=C:\Users\Efsus\Documents\Embarcadero\Studio\Projects\Unit51.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.188,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaOlustur.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFatura.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.542,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\HizliVeri.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.478,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Firma.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.984,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.578,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.864,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.510,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.479,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.320,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.364,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.275,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.805,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.820,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.524,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.545,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.730,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.914,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFatura.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.146,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\HizliDM.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.698,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\islemler.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.215,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.708,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.875,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\islemlerDM.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.779,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.629,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\MukellefKontrol.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.679,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.258,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.598,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.108,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\VeriDM.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.893,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Taslaklar.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.542,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\HizliVeri.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.632,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\HizliService.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.108,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\VeriDM.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.810,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\Mehmet Hoca\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.897,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\Mehmet Hoca\Unit1.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.293,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\SabitDM.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.875,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\islemlerDM.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.698,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\islemler.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.784,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\CariKart.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.914,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFatura.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.146,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\HizliDM.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.629,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\MukellefKontrol.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.708,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Unit1.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.492,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFatura.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.893,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Taslaklar.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.596,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Ana.pas=C:\Users\Efsus\Documents\Embarcadero\Studio\Projects\Unit51.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.479,=C:\Users\Efsus\Documents\Embarcadero\Studio\Projects\Unit51.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.442,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.dfm=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gelenler.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.223,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFaturaList.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.577,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\iller.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.019,=C:\Users\Efsus\Documents\Embarcadero\Studio\Projects\Unit51.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.347,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.224,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFatura.dproj=C:\Users\Efsus\Documents\Embarcadero\Studio\Projects\Project33.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.298,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\eFatura.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.995,=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.101,=C:\Users\Efsus\Documents\Embarcadero\Studio\Projects\Unit51.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.266,=C:\Users\Efsus\Documents\Embarcadero\Studio\Projects\Unit51.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.442,D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gonderilenler.pas=D:\Çalışmalarım\Programcılık\Delphi 10.4\eFatura\Hızlı Bilişim\HızlıeFatura\Gelenler.pas</Transaction>
+  </Transactions>
+</BorlandProject>
