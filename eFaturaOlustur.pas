@@ -65,7 +65,6 @@ type
     CbxFaturaProfil: TComboBox;
     CbxFaturaTipi: TComboBox;
     CBoxTaslak: TCheckBox;
-    Memo1: TMemo;
     procedure BtnFaturaGndrClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
 
@@ -417,7 +416,7 @@ begin
     AppType := 3; // e Arþiv ..
     SetLength(GUIDList, 1);
     GUIDList[0] := ETTN; // '00AA0586-5437-48DF-941C-D6DECCBDC8EE';
-    Memo1.Lines.Add(Cevap[0].Message_);
+
   finally
     if Cevap[0].IsSucceeded = True Then
     Begin

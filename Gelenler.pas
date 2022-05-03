@@ -9,7 +9,8 @@ uses
   Vcl.DBGrids, Vcl.StdCtrls, OnlineCustomControl, OnlineButton, Vcl.ComCtrls,
   Vcl.ExtCtrls, LikaGradPanel, Soap.XSBuiltIns, Vcl.Menus, Winapi.ShellAPI,
   Vcl.Buttons, Soap.InvokeRegistry, System.Net.URLClient, Soap.Rio,
-  Soap.SOAPHTTPClient, Vcl.Mask, HizliService, LikaCustomControl, LikaCheckBox;
+  Soap.SOAPHTTPClient, Vcl.Mask, HizliService, LikaCustomControl, LikaCheckBox,
+  Xml.XMLIntf,Xml.XMLDoc;
 
 type
   TFGelenler = class(TForm)
@@ -18,7 +19,6 @@ type
     GroupBox9: TGroupBox;
     DateTimePicker1: TDateTimePicker;
     DateTimePicker2: TDateTimePicker;
-    DBGrid1: TDBGrid;
     VTGonderilenler: TVirtualTable;
     VTGonderilenlerAppType: TStringField;
     VTGonderilenlerDocumentCurrency: TStringField;
@@ -50,7 +50,7 @@ type
     VTGonderilenlerIssueDate: TDateTimeField;
     DSGonderilenler: TDataSource;
     MemoLog: TMemo;
-    PMGonderilenFatura: TPopupMenu;
+    PMGelenFatura: TPopupMenu;
     PDFGster1: TMenuItem;
     XMLGsterndir1: TMenuItem;
     Panel3: TPanel;
@@ -71,6 +71,16 @@ type
     Cbxislemler: TComboBox;
     GroupBox3: TGroupBox;
     LikaCheckBox1: TLikaCheckBox;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    GroupBox10: TGroupBox;
+    CbxGidenFaturaTuru: TComboBox;
+    GroupBox4: TGroupBox;
+    StGridGelenMaster: TStringGrid;
+    GroupBox5: TGroupBox;
+    StGridGelenDetay: TStringGrid;
+    GroupBox6: TGroupBox;
+    DBGrid1: TDBGrid;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
     procedure FormShow(Sender: TObject);
@@ -86,6 +96,9 @@ type
       SOAPRequest: TStream);
     procedure BtnKabulClick(Sender: TObject);
     procedure BtnUygulaClick(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    procedure NodeGidenOkumaDetay(A: IXMLNode);
+    procedure NodeGidenOkumaMaster(A: IXMLNode);
 
   private
     { Private declarations }
@@ -96,12 +109,13 @@ type
 var
   FGelenler: TFGelenler;
   SecilenFaturaTuru: Integer;
+  sutun,satir, sutun2 : Integer;
 
 implementation
 
 {$R *.dfm}
 
-uses islemlerDM, VeriDM, HizliDM;
+uses islemlerDM, VeriDM, HizliDM, SabitDM;
 
 procedure TFGelenler.Button3Click(Sender: TObject);
 begin
@@ -115,7 +129,7 @@ Var
   CevapKontrol: ResponseMessage2;
   isaretturu: String;
   isaretturudeger: integer;
-  islemturu : integer;
+  islemturu: integer;
   FaturaNo: string;
 
 begin
@@ -217,7 +231,8 @@ Var
 begin
   MemoLog.Lines.Clear;
 
-  HTTPRIO1.HTTPWebNode.GetHTTPReqResp.UserName := DMHizli.FQHizliKULLANICI.AsString;
+  HTTPRIO1.HTTPWebNode.GetHTTPReqResp.UserName :=
+    DMHizli.FQHizliKULLANICI.AsString;
   HTTPRIO1.HTTPWebNode.GetHTTPReqResp.Password := DMHizli.FQHizliSIFRE.AsString;
   Servis := GetIHizliService(false, DMHizli.FQHizliSERVIS.AsString, HTTPRIO1);
 
@@ -294,12 +309,172 @@ begin
   MemoLog.Lines.Add(FormatDateTime('hh:nn:ss', now) + ' ' + Str1);
 end;
 
+
+procedure TFGelenler.NodeGidenOkumaDetay(A: IXMLNode);
+VAR
+  ANode: IXMLNode;
+  Kolonismi: string;
+Begin
+  ANode := A.ChildNodes.First;
+  StGridGelenDetay.cells[0, satir] := IntToStr(satir);
+  repeat
+    if Assigned(ANode) then
+    begin
+      if (ANode.IsTextElement = True) Then
+      Begin
+        Kolonismi := ANode.ParentNode.NodeName + '-' + ANode.LocalName;
+        if ANode.LocalName <> '' then
+          Kolonismi := Copy(Kolonismi, 5, Length(Kolonismi));
+        StGridGelenDetay.cells[sutun2, 0] := Kolonismi;
+
+        StGridGelenDetay.cells[sutun2, satir] := ANode.Text;
+        sutun2 := sutun2 + 1;
+
+
+        if ANode.LocalName = 'PriceAmount' then
+        Begin
+          satir := satir + 1;
+          sutun2 := 0;
+        End;
+      End
+      Else
+      Begin
+
+        NodeGidenOkumaDetay(ANode);
+      End;
+      ANode := ANode.NextSibling;
+    end;
+  until ANode = Nil;
+End;
+
+
+procedure TFGelenler.NodeGidenOkumaMaster(A: IXMLNode);
+VAR
+  ANode: IXMLNode;
+  Kolonismi: string;
+Begin
+  ANode := A.ChildNodes.First;
+  repeat
+    if Assigned(ANode) then
+    begin
+      if (ANode.NodeName <> 'cac:PartyIdentification') then
+        if (ANode.IsTextElement = True) Then
+        Begin
+
+          Kolonismi := ANode.ParentNode.NodeName + '-' + ANode.LocalName;
+
+          StGridGelenMaster.cells[sutun, 0] := Kolonismi;
+          StGridGelenMaster.cells[sutun, 1] := ANode.Text;
+          sutun := sutun + 1;
+
+        End
+        Else
+        Begin
+
+          NodeGidenOkumaMaster(ANode);
+        End;
+      ANode := ANode.NextSibling;
+    end;
+
+  until ANode = Nil;
+End;
+
+
+procedure TFGelenler.N2Click(Sender: TObject);
+Var
+  Servis: IHizliService;
+  Dosya: IXMLDocument;
+  AnaNode: IXMLNode;
+  ETTN: String;
+  Cevap: DocumentContent2;
+  DosyaYaz: TFileStream;
+begin
+  HTTPRIO1.HTTPWebNode.GetHTTPReqResp.UserName :=
+    DMHizli.FQHizliKULLANICI.AsString;
+  HTTPRIO1.HTTPWebNode.GetHTTPReqResp.Password := DMHizli.FQHizliSIFRE.AsString;
+  Servis := GetIHizliService(false, DMHizli.FQHizliSERVIS.AsString, HTTPRIO1);
+
+  ETTN := VTGonderilenlerUUID.AsString;
+
+  if CbxGidenFaturaTuru.Text = 'e-Fatura Giden' then
+    SecilenFaturaTuru := 2;
+  if CbxGidenFaturaTuru.Text = 'e-Arþiv Giden' then
+    SecilenFaturaTuru := 3;
+  if CbxGidenFaturaTuru.Text = 'e-Ýrsaliye Giden' then
+    SecilenFaturaTuru := 5;
+  if CbxGidenFaturaTuru.Text = 'e-SMM Giden' then
+    SecilenFaturaTuru := 6;
+  if CbxGidenFaturaTuru.Text = 'e-Müstahsil Giden' then
+    SecilenFaturaTuru := 7;
+
+  Cevap := Servis.GetDocumentFile(SecilenFaturaTuru, ETTN, 'XML', false);
+  if Cevap.IsSucceeded then
+  begin
+    DosyaYaz := TFileStream.Create(GetCurrentDir + '\' +
+      ETTN + '.' + 'XML', fmCreate);
+    DosyaYaz.Write(Cevap.DocumentFile, Length(Cevap.DocumentFile));
+    DosyaYaz.Free;
+
+    ShellExecute(Handle, 'open', PWideChar(GetCurrentDir +
+      '\' + ETTN + '.' + 'XML'), nil, nil, SW_SHOWNORMAL);
+  end
+  else
+  begin
+    ShowMessage('Baþarýsýz');
+  end;
+
+  sutun := -1;
+  satir := 1;
+  StGridGelenMaster.cells[0, 0] := 'Sýra';
+  Dosya := LoadXMLDocument(PWideChar(GetCurrentDir + '\' +
+    ETTN + '.' + 'XML'));
+  Dosya.Active := True;
+  AnaNode := Dosya.DocumentElement.ChildNodes.First;
+  repeat
+    if Assigned(AnaNode) Then
+    Begin
+
+      if (AnaNode.IsTextElement = True) Then
+      Begin
+
+        sutun := sutun + 1;
+        StGridGelenMaster.cells[sutun, 0] := AnaNode.LocalName;
+        StGridGelenMaster.cells[sutun, 1] := AnaNode.Text;
+      End
+      else
+      Begin
+        if (AnaNode.NodeName <> 'ext:UBLExtensions') and
+          (AnaNode.NodeName <> 'cac:PartyIdentification') and
+          (AnaNode.NodeName <> 'cac:AdditionalDocumentReference') Then
+        Begin
+          if (AnaNode.NodeName = 'cac:InvoiceLine') Then
+          Begin
+            sutun2 := sutun2 + 1;
+            NodeGidenOkumaDetay(AnaNode);
+          End
+          else if (AnaNode.NodeName = 'cac:Signature') Then
+          Begin
+
+            sutun := sutun + 1;
+            NodeGidenOkumaMaster(AnaNode);
+          End;
+        End;
+      End;
+    End;
+
+    AnaNode := AnaNode.NextSibling;
+  until AnaNode = Nil;
+end;
+
+
+
+
 procedure TFGelenler.PDFGster1Click(Sender: TObject);
 var
   Servis: IHizliService;
   Cevap: DocumentContent2;
   ETTN: String;
-  dosyayaz: TFileStream;
+  DosyaYaz: TFileStream;
 begin
 
   MemoLog.Lines.Clear;
@@ -325,10 +500,10 @@ begin
 
   if Cevap.IsSucceeded then
   begin
-    dosyayaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString + '\' +
+    DosyaYaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString + '\' +
       ETTN + '.' + 'PDF', fmCreate);
-    dosyayaz.Write(Cevap.DocumentFile, length(Cevap.DocumentFile));
-    dosyayaz.Free;
+    DosyaYaz.Write(Cevap.DocumentFile, Length(Cevap.DocumentFile));
+    DosyaYaz.Free;
 
     ShellExecute(Handle, 'open', PWideChar(DMHizli.FQHizliEFATURAYER.AsString +
       '\' + ETTN + '.' + 'PDF'), nil, nil, SW_SHOWNORMAL);
@@ -348,7 +523,7 @@ var
   BaslamaTarihi: TXSDateTime;
   BitisTarihi: TXSDateTime;
   TarihTipi: String;
-  Taslak :Boolean;
+  Taslak: Boolean;
 
 begin
   MemoLog.Lines.Clear;
@@ -362,7 +537,10 @@ begin
     TarihTipi := 'CreatedDate'
   else if RadioButton2.Checked then
     TarihTipi := 'IssueDate';
-  if LikaCheckBox1.Checked then Taslak := True else Taslak := False;
+  if LikaCheckBox1.Checked then
+    Taslak := True
+  else
+    Taslak := false;
 
   BaslamaTarihi := TXSDateTime.Create;
   BitisTarihi := TXSDateTime.Create;
@@ -401,7 +579,7 @@ begin
   I := 0;
 
   TRY
-    While length(Cevap.Documents[I].DocumentId) <> 0 do
+    While Length(Cevap.Documents[I].DocumentId) <> 0 do
     begin
       VTGonderilenler.Append;
       VTGonderilenlerAppType.AsInteger := Cevap.Documents[I].AppType;
@@ -507,7 +685,7 @@ begin
   I := 0;
 
   TRY
-    While length(Cevap.Documents[I].DocumentId) <> 0 do
+    While Length(Cevap.Documents[I].DocumentId) <> 0 do
     begin
       VTGonderilenler.Append;
       VTGonderilenlerAppType.AsInteger := Cevap.Documents[I].AppType;
@@ -563,7 +741,7 @@ var
   Servis: IHizliService;
   Cevap: DocumentContent2;
   ETTN: String;
-  dosyayaz: TFileStream;
+  DosyaYaz: TFileStream;
 begin
 
   MemoLog.Lines.Clear;
@@ -589,10 +767,10 @@ begin
 
   if Cevap.IsSucceeded then
   begin
-    dosyayaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString + '\' +
+    DosyaYaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString + '\' +
       ETTN + '.' + 'XML', fmCreate);
-    dosyayaz.Write(Cevap.DocumentFile, length(Cevap.DocumentFile));
-    dosyayaz.Free;
+    DosyaYaz.Write(Cevap.DocumentFile, Length(Cevap.DocumentFile));
+    DosyaYaz.Free;
 
     ShellExecute(Handle, 'open', PWideChar(DMHizli.FQHizliEFATURAYER.AsString +
       '\' + ETTN + '.' + 'XML'), nil, nil, SW_SHOWNORMAL);

@@ -156,6 +156,10 @@ object FAna: TFAna
     end
     object Yardm1: TMenuItem
       Caption = 'Yard'#305'm'
+      object Hakknda1: TMenuItem
+        Caption = 'Hakk'#305'nda'
+        OnClick = Hakknda1Click
+      end
     end
   end
   object ActionList1: TActionList

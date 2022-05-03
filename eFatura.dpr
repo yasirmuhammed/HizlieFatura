@@ -19,7 +19,8 @@ uses
   Firma in 'Firma.pas' {FFirma},
   islemler in 'islemler.pas' {Fislemler},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  About in 'About.pas' {FAboutBox};
 
 {$R *.res}
 

@@ -937,11 +937,11 @@ begin
     Giris[0].InvoiceModel.invoiceLines := FaturaKalem;
     Cevap := Servis.SendInvoiceModel(Giris);
 
+  finally
     if Cevap[0].IsSucceeded = True Then
       ShowMessage(Cevap[0].Message_ + #10'e Fatura Baþarý ile gönderildi.')
     else
       ShowMessage(Cevap[0].Message_ + #10'Baþarýsýz.');
-  finally
     for Sayac := 0 to length(Giris) - 1 do
       Giris[Sayac].Free;
     for Sayac := 0 to length(Cevap) - 1 do

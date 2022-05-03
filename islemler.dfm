@@ -135,15 +135,13 @@ object Fislemler: TFislemler
       Top = 0
       Width = 858
       Height = 485
-      ActivePage = TabSSemaKontrol
+      ActivePage = TabSheteFaturaGonder
       Align = alClient
       MultiLine = True
       ParentShowHint = False
       ShowHint = True
       TabHeight = 25
       TabOrder = 1
-      ExplicitLeft = -1
-      ExplicitTop = -3
       object TabSheteFaturaGonder: TTabSheet
         Caption = 'SendDocument / Fatura G'#246'nder'
         ImageIndex = 3
@@ -173,8 +171,6 @@ object Fislemler: TFislemler
             ParentColor = False
             ParentFont = False
             TabOrder = 0
-            ExplicitTop = 3
-            ExplicitHeight = 114
             object Label11: TLabel
               Left = 37
               Top = 28
@@ -464,8 +460,6 @@ object Fislemler: TFislemler
             ParentColor = False
             ParentFont = False
             TabOrder = 1
-            ExplicitTop = 3
-            ExplicitHeight = 114
             object Label18: TLabel
               Left = 24
               Top = 24
@@ -595,8 +589,6 @@ object Fislemler: TFislemler
             ParentBackground = False
             ParentFont = False
             TabOrder = 2
-            ExplicitLeft = 6
-            ExplicitTop = 11
           end
         end
         object GroupBox16: TGroupBox

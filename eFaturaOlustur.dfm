@@ -825,14 +825,5 @@ object FeFaturaOlustur: TFeFaturaOlustur
         end
       end
     end
-    object Memo1: TMemo
-      Left = 243
-      Top = 56
-      Width = 502
-      Height = 89
-      Lines.Strings = (
-        'Memo1')
-      TabOrder = 2
-    end
   end
 end

@@ -55,6 +55,7 @@ type
     Firma1: TMenuItem;
     lemler1: TMenuItem;
     lemler2: TMenuItem;
+    Hakknda1: TMenuItem;
     procedure Birim1Click(Sender: TObject);
     procedure Birim2Click(Sender: TObject);
     procedure ipler1Click(Sender: TObject);
@@ -81,6 +82,7 @@ type
     procedure Firma1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure lemler2Click(Sender: TObject);
+    procedure Hakknda1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -97,7 +99,7 @@ implementation
 {$R *.dfm}
 
 uses HizliVeri, Gonderilenler, Gelenler, eFaturaOlustur, CariKart, Taslaklar,
-  iller, MukellefKontrol, Firma, SabitDM, islemler;
+  iller, MukellefKontrol, Firma, SabitDM, islemler, About;
 
 procedure TFAna.aslaklar1Click(Sender: TObject);
 begin
@@ -207,6 +209,13 @@ begin
   if Application.FindComponent('FGonderilenler') = nil then
     Application.CreateForm(TFGonderilenler, FGonderilenler);
   FGonderilenler.Show;
+end;
+
+procedure TFAna.Hakknda1Click(Sender: TObject);
+begin
+  if Application.FindComponent('FAboutBox') = nil then
+    Application.CreateForm(TFAboutBox, FAboutBox);
+  FAboutBox.Show;
 end;
 
 procedure TFAna.ihracatkayitClick(Sender: TObject);

@@ -2,7 +2,7 @@ object FGelenler: TFGelenler
   Left = 0
   Top = 0
   Caption = 'G'#246'nderilen e Faturlar'
-  ClientHeight = 486
+  ClientHeight = 774
   ClientWidth = 986
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -23,10 +23,11 @@ object FGelenler: TFGelenler
     Left = 3
     Top = 3
     Width = 980
-    Height = 445
+    Height = 733
     Align = alClient
     BevelInner = bvLowered
     TabOrder = 0
+    ExplicitHeight = 445
     object Panel2: TPanel
       Left = 2
       Top = 49
@@ -36,9 +37,10 @@ object FGelenler: TFGelenler
       BevelOuter = bvNone
       Color = 6730751
       TabOrder = 0
+      ExplicitTop = 46
       object BtnListele: TSpeedButton
-        Left = 471
-        Top = 17
+        Left = 583
+        Top = 21
         Width = 82
         Height = 38
         Glyph.Data = {
@@ -105,7 +107,6 @@ object FGelenler: TFGelenler
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitHeight = 90
         object DateTimePicker1: TDateTimePicker
           AlignWithMargins = True
           Left = 8
@@ -164,7 +165,6 @@ object FGelenler: TFGelenler
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 90
         object RadioButton1: TRadioButton
           Left = 14
           Top = 21
@@ -217,7 +217,6 @@ object FGelenler: TFGelenler
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 2
-        ExplicitHeight = 50
         DesignSize = (
           333
           74)
@@ -292,9 +291,9 @@ object FGelenler: TFGelenler
       end
       object GroupBox3: TGroupBox
         AlignWithMargins = True
-        Left = 319
+        Left = 463
         Top = 3
-        Width = 122
+        Width = 114
         Height = 74
         Align = alLeft
         Caption = ' Se'#231'enekler '
@@ -305,7 +304,6 @@ object FGelenler: TFGelenler
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 3
-        ExplicitLeft = 391
         object LikaCheckBox1: TLikaCheckBox
           Left = 16
           Top = 24
@@ -339,201 +337,54 @@ object FGelenler: TFGelenler
           Transparent = False
         end
       end
-    end
-    object DBGrid1: TDBGrid
-      AlignWithMargins = True
-      Left = 5
-      Top = 132
-      Width = 970
-      Height = 129
-      Align = alClient
-      DataSource = DSGonderilenler
-      PopupMenu = PMGonderilenFatura
-      TabOrder = 1
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'Tahoma'
-      TitleFont.Style = []
-      Columns = <
-        item
-          Expanded = False
-          FieldName = 'AppType'
-          Width = 100
-          Visible = True
+      object GroupBox10: TGroupBox
+        AlignWithMargins = True
+        Left = 319
+        Top = 3
+        Width = 138
+        Height = 74
+        Align = alLeft
+        Caption = ' Fatura T'#252'r'#252' '
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clNavy
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 4
+        ExplicitLeft = 191
+        ExplicitHeight = 83
+        object CbxGidenFaturaTuru: TComboBox
+          Left = 8
+          Top = 36
+          Width = 119
+          Height = 24
+          Style = csDropDownList
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ItemIndex = 0
+          ParentFont = False
+          TabOrder = 0
+          Text = 'e-Fatura Gelen'
+          Items.Strings = (
+            'e-Fatura Gelen'
+            'e-'#304'rsaliye Gelen')
         end
-        item
-          Expanded = False
-          FieldName = 'DocumentCurrency'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'DocumentId'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'DocumentTypeCode'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'EnvelopeExp'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'EnvelopeStatus'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'EnvelopeUUID'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'IsAccount'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'IsArchive'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'IsInternetSale'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'IsPrinted'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'IsRead'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'IsTransferred'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'LocalReferenceId'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Message'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'PayableAmount'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'ProfileId'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'SendType'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'Status'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'StatusExp'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'TargetAlias'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'TargetIdentifier'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'TargetTitle'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'TaxTotal'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'UUID'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'CancelDate'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'CreateDate'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'IssueDate'
-          Width = 100
-          Visible = True
-        end>
+      end
     end
     object MemoLog: TMemo
       AlignWithMargins = True
       Left = 5
-      Top = 267
+      Top = 555
       Width = 970
       Height = 173
       Align = alBottom
       ScrollBars = ssBoth
-      TabOrder = 2
+      TabOrder = 1
+      ExplicitTop = 267
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -552,17 +403,283 @@ object FGelenler: TFGelenler
       Font.Style = [fsBold]
       ParentBackground = False
       ParentFont = False
+      TabOrder = 2
+    end
+    object GroupBox4: TGroupBox
+      Left = 2
+      Top = 447
+      Width = 976
+      Height = 105
+      Align = alBottom
+      Caption = ' Fatura Master '
       TabOrder = 3
+      ExplicitTop = 338
+      object StGridGelenMaster: TStringGrid
+        Left = 2
+        Top = 15
+        Width = 972
+        Height = 88
+        Align = alClient
+        ColCount = 30
+        RowCount = 10
+        TabOrder = 0
+        ExplicitLeft = 3
+        ExplicitTop = 14
+        RowHeights = (
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24)
+      end
+    end
+    object GroupBox5: TGroupBox
+      Left = 2
+      Top = 342
+      Width = 976
+      Height = 105
+      Align = alBottom
+      Caption = ' Fatura Detay '
+      TabOrder = 4
+      ExplicitTop = 447
+      object StGridGelenDetay: TStringGrid
+        Left = 2
+        Top = 15
+        Width = 972
+        Height = 88
+        Align = alClient
+        ColCount = 30
+        DefaultColWidth = 300
+        RowCount = 10
+        TabOrder = 0
+        ExplicitLeft = 11
+        ExplicitTop = 11
+        RowHeights = (
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24
+          24)
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 2
+      Top = 129
+      Width = 976
+      Height = 213
+      Align = alClient
+      Caption = ' Gelen Faturalar '
+      TabOrder = 5
+      ExplicitLeft = 394
+      ExplicitTop = 312
+      ExplicitWidth = 185
+      ExplicitHeight = 105
+      object DBGrid1: TDBGrid
+        AlignWithMargins = True
+        Left = 5
+        Top = 18
+        Width = 966
+        Height = 190
+        Align = alClient
+        DataSource = DSGonderilenler
+        PopupMenu = PMGelenFatura
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'AppType'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DocumentCurrency'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DocumentId'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DocumentTypeCode'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'EnvelopeExp'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'EnvelopeStatus'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'EnvelopeUUID'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'IsAccount'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'IsArchive'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'IsInternetSale'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'IsPrinted'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'IsRead'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'IsTransferred'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'LocalReferenceId'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'Message'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'PayableAmount'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ProfileId'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SendType'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'Status'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'StatusExp'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TargetAlias'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TargetIdentifier'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TargetTitle'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TaxTotal'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'UUID'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CancelDate'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CreateDate'
+            Width = 100
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'IssueDate'
+            Width = 100
+            Visible = True
+          end>
+      end
     end
   end
   object Panel4: TPanel
     Left = 0
-    Top = 451
+    Top = 739
     Width = 986
     Height = 35
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
+    ExplicitTop = 451
     DesignSize = (
       986
       35)
@@ -887,7 +1004,7 @@ object FGelenler: TFGelenler
     Left = 368
     Top = 176
   end
-  object PMGonderilenFatura: TPopupMenu
+  object PMGelenFatura: TPopupMenu
     Left = 464
     Top = 176
     object PDFGster1: TMenuItem
@@ -897,6 +1014,13 @@ object FGelenler: TFGelenler
     object XMLGsterndir1: TMenuItem
       Caption = 'XML G'#246'ster/'#304'ndir'
       OnClick = XMLGsterndir1Click
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object N2: TMenuItem
+      Caption = 'Fatura Detay'
+      OnClick = N2Click
     end
   end
   object HTTPRIO1: THTTPRIO
