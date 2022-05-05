@@ -137,10 +137,6 @@
             <Form>FeFaturaOlustur</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="CariKart.pas">
-            <Form>FCariKart</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="Gonderilenler.pas">
             <Form>FGonderilenler</Form>
             <FormType>dfm</FormType>
@@ -168,6 +164,10 @@
         </DCCReference>
         <DCCReference Include="About.pas">
             <Form>FAboutBox</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CariKart.pas">
+            <Form>FCariKart</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

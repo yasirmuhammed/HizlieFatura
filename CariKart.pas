@@ -3,12 +3,13 @@ unit CariKart;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, DBOnlineCombo,
-  OnlineCustomControl, OnlineCheckBox, OnlineDBCheckbox, Vcl.DBCtrls,
-  DBOnlineLookupCombo, DBOnlineEdit, LikaGradPanel, Vcl.Grids, Vcl.DBGrids,
-  OnlineDBGrid, OnlineSearchEdit, Vcl.Mask, OnlineEdit, LikaCustomControl,
-  LikaButton, Vcl.ExtCtrls;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls,
+  Vcl.DBCtrls,
+  LikaGradPanel, Vcl.Grids, Vcl.DBGrids,
+  Vcl.Mask, Vcl.ExtCtrls, DBOnlineLookupCombo, DBOnlineEdit, OnlineDBGrid,
+  OnlineEdit, LikaCustomControl, LikaButton;
 
 type
   TFCariKart = class(TForm)
@@ -23,7 +24,6 @@ type
     ButtonNext: TLikaButton;
     ButtonPrevious: TLikaButton;
     BFirstPage: TLikaButton;
-    OnlineSearchEdit1: TOnlineSearchEdit;
     OnlineButton7: TLikaButton;
     OnlineButton9: TLikaButton;
     LikaButton1: TLikaButton;

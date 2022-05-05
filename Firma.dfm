@@ -231,7 +231,7 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
         end
-        object DBOnlineEdit4: TDBOnlineEdit
+        object DBOnlineEdit4: TDBEdit
           Left = 75
           Top = 120
           Width = 310
@@ -246,11 +246,8 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
           TabOrder = 1
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit7: TDBOnlineEdit
+        object DBOnlineEdit7: TDBEdit
           Left = 75
           Top = 152
           Width = 238
@@ -265,11 +262,8 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
           TabOrder = 2
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit8: TDBOnlineEdit
+        object DBOnlineEdit8: TDBEdit
           Left = 75
           Top = 184
           Width = 102
@@ -285,11 +279,8 @@ object FFirma: TFFirma
           MaxLength = 9
           ParentFont = False
           TabOrder = 3
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit10: TDBOnlineEdit
+        object DBOnlineEdit10: TDBEdit
           Left = 75
           Top = 216
           Width = 102
@@ -305,11 +296,8 @@ object FFirma: TFFirma
           MaxLength = 9
           ParentFont = False
           TabOrder = 6
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit1: TDBOnlineEdit
+        object DBOnlineEdit1: TDBEdit
           Left = 75
           Top = 248
           Width = 312
@@ -324,11 +312,8 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
           TabOrder = 7
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit2: TDBOnlineEdit
+        object DBOnlineEdit2: TDBEdit
           Left = 75
           Top = 336
           Width = 142
@@ -343,11 +328,8 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
           TabOrder = 11
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit3: TDBOnlineEdit
+        object DBOnlineEdit3: TDBEdit
           Left = 75
           Top = 368
           Width = 142
@@ -362,9 +344,6 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
           TabOrder = 12
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
         object DBImage1: TDBImage
           Left = 75
@@ -379,7 +358,7 @@ object FFirma: TFFirma
           OnClick = DBImage1Click
           OnKeyPress = DBImage1KeyPress
         end
-        object DBOnlineEdit5: TDBOnlineEdit
+        object DBOnlineEdit5: TDBEdit
           Left = 179
           Top = 184
           Width = 102
@@ -394,11 +373,8 @@ object FFirma: TFFirma
           MaxLength = 9
           ParentFont = False
           TabOrder = 4
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit6: TDBOnlineEdit
+        object DBOnlineEdit6: TDBEdit
           Left = 283
           Top = 184
           Width = 102
@@ -413,11 +389,8 @@ object FFirma: TFFirma
           MaxLength = 9
           ParentFont = False
           TabOrder = 5
-          RenkGiris = 15921847
-          RenkCikis = 14811135
-          BuyukKucuk = True
         end
-        object DBOnlineEdit9: TDBOnlineEdit
+        object DBOnlineEdit9: TDBEdit
           Left = 262
           Top = 336
           Width = 142
@@ -432,10 +405,8 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
           TabOrder = 13
-          RenkGiris = 15921847
-          RenkCikis = 14811135
         end
-        object DBOnlineEdit11: TDBOnlineEdit
+        object DBOnlineEdit11: TDBEdit
           Left = 262
           Top = 368
           Width = 142
@@ -450,8 +421,6 @@ object FFirma: TFFirma
           Font.Style = []
           ParentFont = False
           TabOrder = 14
-          RenkGiris = 15921847
-          RenkCikis = 14811135
         end
         object DBOnlineLookupCombo2: TDBOnlineLookupCombo
           Left = 75
@@ -533,75 +502,20 @@ object FFirma: TFFirma
       BevelOuter = bvNone
       Color = 13395456
       TabOrder = 2
-      object BitBtn3: TOnlineButton
+      object BitBtn3: TButton
         Left = 375
         Top = 6
         Width = 50
         Height = 25
-        TabOrder = 0
-        TabStop = True
+        Caption = 'Kapat'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clMaroon
         Font.Height = -12
         Font.Name = 'MS Sans Serif'
         Font.Style = []
         ParentFont = False
+        TabOrder = 0
         OnClick = BitBtn3Click
-        Cornerradius = 5
-        DrawDisabledImg = False
-        Glyph.Data = {
-          AA030000424DAA03000000000000360000002800000011000000110000000100
-          18000000000074030000120B0000120B00000000000000000000FFFFFFFFFFFF
-          000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFF000000000000000000000000000000
-          000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FF00000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000FFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2804E42804E42804E4FFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFF00000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFF2804E42804E42804E42804E4FFFFFFFFFFFFFFFFFFFFFFFF000000
-          00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2804E428
-          04E42804E42804E4FFFFFFFFFFFFFFFFFF00000000000000FFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2804E42804E42804E42804E4FF
-          FFFFFFFFFF00000000000000FFFFFFFFFFFFFFFFFF2804E42804E42804E42804
-          E42804E42804E42804E42804E42804E42804E42804E4FFFFFF00000000000000
-          FFFFFFFFFFFFFFFFFF2804E42804E42804E42804E42804E42804E42804E42804
-          E42804E42804E42804E42804E400000000000000FFFFFFFFFFFFFFFFFF2804E4
-          2804E42804E42804E42804E42804E42804E42804E42804E42804E42804E4FFFF
-          FF00000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFF2804E42804E42804E42804E4FFFFFFFFFFFF00000000000000FFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2804E42804E42804E42804E4
-          FFFFFFFFFFFFFFFFFF00000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFF2804E42804E42804E42804E4FFFFFFFFFFFFFFFFFFFFFFFF000000
-          00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2804E42804E428
-          04E4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000FFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFF00FFFFFF0000000000000000000000000000000000000000000000
-          00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFF
-          000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFEA}
-        Layout = blGlyphRight
-        Colors.BackgroundFrom = clWhite
-        Colors.BackgroundTo = 15199215
-        Colors.BorderLine = clGray
-        Colors.ClickedFrom = 13029334
-        Colors.ClickedTo = 15463415
-        Colors.FocusedFrom = 16771022
-        Colors.FocusedTo = 15697005
-        Colors.HighlightFrom = 13562879
-        Colors.HighlightTo = 38631
-        Colors.HotTrack = clRed
-        Colors.Downarrow = clBlack
-        Colors.GradientShift = 0
-        Colors.GradientStyle = gsButterfly
-        ShowAccelChar = True
-        ShowFocusRect = True
-        CanRepeat = False
-        ShowDownArrow = False
-        Lines.Strings = (
-          'Kapat')
-        Multiline = False
-        Cizim = True
       end
     end
   end

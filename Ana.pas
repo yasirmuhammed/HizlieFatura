@@ -32,8 +32,6 @@ type
     Gelenler1: TMenuItem;
     aslaklar1: TMenuItem;
     eFaturaOlutur1: TMenuItem;
-    Cari1: TMenuItem;
-    Cari2: TMenuItem;
     ActionList1: TActionList;
     WindowClose1: TWindowClose;
     WindowCascade1: TWindowCascade;
@@ -56,6 +54,8 @@ type
     lemler1: TMenuItem;
     lemler2: TMenuItem;
     Hakknda1: TMenuItem;
+    Cari1: TMenuItem;
+    Cari2: TMenuItem;
     procedure Birim1Click(Sender: TObject);
     procedure Birim2Click(Sender: TObject);
     procedure ipler1Click(Sender: TObject);

@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, LikaGradPanel,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls,
   Vcl.ComCtrls, Soap.InvokeRegistry, System.Net.URLClient, SynEditHighlighter,
   SynHighlighterXML, Soap.Rio, Soap.SOAPHTTPClient, Soap.XSBuiltIns, SynEdit,
   Vcl.StdCtrls,
@@ -14,7 +14,7 @@ uses
   Vcl.Buttons, Xml.xmldom, Xml.XMLIntf, Xml.XMLDoc, Vcl.Imaging.pngimage,
   Vcl.VirtualImage, Vcl.WinXCtrls, Vcl.BaseImageCollection, Vcl.ImageCollection,
   System.ImageList, Vcl.ImgList, Vcl.VirtualImageList, Vcl.TitleBarCtrls,
-  System.UITypes, Vcl.Themes;
+  System.UITypes, Vcl.Themes, LikaGradPanel;
 
 type
   TFislemler = class(TForm)

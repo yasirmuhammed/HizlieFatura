@@ -14,6 +14,7 @@ type
     LabelSurum: TLabel;
     SpeedButton1: TSpeedButton;
     Label1: TLabel;
+    Label2: TLabel;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure ProgramIconClick(Sender: TObject);
     procedure FormShow(Sender: TObject);

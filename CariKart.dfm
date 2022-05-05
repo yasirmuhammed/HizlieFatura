@@ -125,8 +125,8 @@ object FCariKart: TFCariKart
         Cizim = True
       end
       object BitBtn2: TLikaButton
-        Left = 656
-        Top = 7
+        Left = 659
+        Top = 6
         Width = 50
         Height = 25
         Hint = 'Cari Kart'#305' Sil'
@@ -287,8 +287,8 @@ object FCariKart: TFCariKart
         Cizim = True
       end
       object OnlineEdit1: TOnlineEdit
-        Left = 385
-        Top = 10
+        Left = 344
+        Top = 9
         Width = 170
         Height = 21
         Hint = 
@@ -497,27 +497,13 @@ object FCariKart: TFCariKart
         Multiline = False
         Cizim = True
       end
-      object OnlineSearchEdit1: TOnlineSearchEdit
-        Left = 329
-        Top = 10
-        Width = 49
-        Height = 21
-        Hint = 'Cari Noya G'#246're Arama'
-        Color = 12058623
-        ParentShowHint = False
-        ShowHint = True
-        TabOrder = 8
-        DataField = 'CARINO'
-        Locate = True
-        Like = False
-      end
       object OnlineButton7: TLikaButton
         Left = 603
         Top = 7
         Width = 50
         Height = 25
         Hint = 'Cari Kart'#305' Kopyala'
-        TabOrder = 9
+        TabOrder = 8
         TabStop = True
         Anchors = [akTop, akRight]
         ParentShowHint = False
@@ -581,7 +567,7 @@ object FCariKart: TFCariKart
         Width = 50
         Height = 25
         Hint = 'Listeyi Excel'#39'e Aktar.'
-        TabOrder = 10
+        TabOrder = 9
         TabStop = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGreen
@@ -666,7 +652,7 @@ object FCariKart: TFCariKart
         Width = 50
         Height = 25
         Hint = 'e Fatura M'#252'kellefi Kontrol'
-        TabOrder = 11
+        TabOrder = 10
         TabStop = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGreen

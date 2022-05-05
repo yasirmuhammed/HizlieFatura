@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.ExtCtrls, LikaGradPanel, Data.DB, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls;
+  Vcl.ExtCtrls,  Data.DB, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls, LikaGradPanel;
 
 type
   TFHizliVeri = class(TForm)

@@ -32,7 +32,6 @@ object Filler: TFiller
     Anchors = [akLeft, akTop, akBottom]
     BevelInner = bvLowered
     TabOrder = 0
-    ExplicitWidth = 665
     object GroupBox4: TGroupBox
       Left = 2
       Top = 474
@@ -46,7 +45,6 @@ object Filler: TFiller
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 0
-      ExplicitWidth = 661
       DesignSize = (
         770
         40)
@@ -146,7 +144,6 @@ object Filler: TFiller
           'Kapat')
         Multiline = False
         Cizim = True
-        ExplicitLeft = 608
       end
       object OnlineEdit1: TOnlineEdit
         Left = 63
@@ -211,10 +208,6 @@ object Filler: TFiller
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 4
-        ExplicitTop = 4
-        ExplicitWidth = 275
-        ExplicitHeight = 355
         object OnlineDBGrid1: TOnlineDBGrid
           AlignWithMargins = True
           Left = 5
@@ -282,8 +275,6 @@ object Filler: TFiller
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 1
-          ExplicitTop = 252
-          ExplicitWidth = 265
           object BFirstPage: TOnlineButton
             Left = 7
             Top = 64
@@ -665,10 +656,6 @@ object Filler: TFiller
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 4
-        ExplicitTop = 4
-        ExplicitWidth = 263
-        ExplicitHeight = 246
         object OnlineDBGrid2: TOnlineDBGrid
           Left = -4
           Top = 14
@@ -735,9 +722,6 @@ object Filler: TFiller
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitLeft = 4
-        ExplicitTop = 256
-        ExplicitWidth = 263
         object BitBtn1: TOnlineButton
           Left = 4
           Top = 70
@@ -1119,7 +1103,6 @@ object Filler: TFiller
       BorderColor = 9863296
       UseAsGroupBox = False
       Transparent = False
-      ExplicitWidth = 655
     end
     object Panel2: TPanel
       Left = 2
@@ -1129,7 +1112,6 @@ object Filler: TFiller
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 4
-      ExplicitWidth = 661
       object GroupBox5: TGroupBox
         AlignWithMargins = True
         Left = 3

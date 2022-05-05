@@ -5,8 +5,9 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Grids, DBGrids, OnlineDBGrid, OnlineEdit, Buttons,
-  ExtCtrls, Mask, DBCtrls, DBOnlineEdit, OnlineButton,
-  OnlineCustomControl, Data.DB, LikaGradPanel, LikaDBLookupCombo, LikaDBEdit;
+  ExtCtrls, Mask, DBCtrls,
+  OnlineCustomControl, Data.DB, LikaDBEdit, LikaDBLookupCombo, LikaGradPanel,
+  DBOnlineEdit, OnlineButton;
 
 type
   TFiller = class(TForm)

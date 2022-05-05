@@ -6,8 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, VirtualTable, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls, OnlineCustomControl, OnlineButton, Vcl.ComCtrls,
-  Vcl.ExtCtrls, LikaGradPanel, Soap.XSBuiltIns, Vcl.Menus,Winapi.ShellAPI,
+  Vcl.DBGrids, Vcl.StdCtrls,    Vcl.ComCtrls,
+  Vcl.ExtCtrls,   Soap.XSBuiltIns, Vcl.Menus,Winapi.ShellAPI,
   Vcl.Buttons, Soap.InvokeRegistry, System.Net.URLClient, Soap.Rio,
   Soap.SOAPHTTPClient;
 

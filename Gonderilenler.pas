@@ -6,8 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, VirtualTable, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls, OnlineCustomControl, OnlineButton, Vcl.ComCtrls,
-  Vcl.ExtCtrls, LikaGradPanel, Soap.XSBuiltIns, Vcl.Menus,Winapi.ShellAPI,
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.ExtCtrls, LikaGradPanel, Soap.XSBuiltIns, Vcl.Menus, Winapi.ShellAPI,
   Vcl.Buttons, Soap.InvokeRegistry, System.Net.URLClient, Soap.Rio,
   Soap.SOAPHTTPClient, LikaCustomControl, LikaCheckBox;
 
@@ -103,7 +103,6 @@ begin
   MemoLog.Lines.Add(FormatDateTime('hh:nn:ss', Now) + ' ' + Str1);
 end;
 
-
 procedure TFGonderilenler.BtnUygulaClick(Sender: TObject);
 Var
   Servis: IHizliService;
@@ -111,7 +110,7 @@ Var
   CevapKontrol: ResponseMessage2;
   isaretturu: String;
   isaretturudeger: integer;
-  islemturu : integer;
+  islemturu: integer;
   FaturaNo: string;
 
 begin
@@ -215,12 +214,11 @@ end;
 
 procedure TFGonderilenler.FormShow(Sender: TObject);
 begin
-  DateTimePicker1.DateTime := now-7;
-  DateTimePicker2.DateTime := now;
+  DateTimePicker1.DateTime := Now - 7;
+  DateTimePicker2.DateTime := Now;
 
   DMHizli.FQHizli.Open;
 end;
-
 
 procedure TFGonderilenler.HTTPRIO1AfterExecute(const MethodName: string;
   SOAPResponse: TStream);
@@ -239,7 +237,6 @@ begin
   LogEkle('CEVAP OLARAK GELEN XML KODLARI' + #13#10#13#10 + Str + #13#10);
 end;
 
-
 procedure TFGonderilenler.HTTPRIO1BeforeExecute(const MethodName: string;
   SOAPRequest: TStream);
 var
@@ -250,8 +247,9 @@ begin
   try
     SOAPRequest.Position := 0;
     StrList1.LoadFromStream(SOAPRequest);
-    LogEkle('GÖNDERÝLECEK XML KODLARI' + #13#10#13#10 + StringReplace(StrList1.Text, '><', '>' + #13#10 + '<',
-      [rfReplaceAll]) + #13#10);
+    LogEkle('GÖNDERÝLECEK XML KODLARI' + #13#10#13#10 +
+      StringReplace(StrList1.Text, '><', '>' + #13#10 + '<', [rfReplaceAll])
+      + #13#10);
   finally
     StrList1.Free;
   end;
@@ -284,20 +282,19 @@ begin
     7 - e-Müstahsil Giden
   }
 
-      SecilenFaturaTuru := 2;
-
+  SecilenFaturaTuru := 2;
 
   Cevap := Servis.GetDocumentFile(SecilenFaturaTuru, ETTN, 'PDF', false);
 
   if Cevap.IsSucceeded then
   begin
-    dosyayaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString +'\'+ ETTN +
-      '.' + 'PDF', fmCreate);
+    dosyayaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString + '\' +
+      ETTN + '.' + 'PDF', fmCreate);
     dosyayaz.Write(Cevap.DocumentFile, length(Cevap.DocumentFile));
     dosyayaz.Free;
 
-    ShellExecute(Handle, 'open', PWideChar(DMHizli.FQHizliEFATURAYER.AsString +'\'
-      + ETTN + '.' + 'PDF'), nil, nil, SW_SHOWNORMAL);
+    ShellExecute(Handle, 'open', PWideChar(DMHizli.FQHizliEFATURAYER.AsString +
+      '\' + ETTN + '.' + 'PDF'), nil, nil, SW_SHOWNORMAL);
   end
   else
   begin
@@ -314,23 +311,27 @@ var
   StartDate: TXSDateTime;
   EndDate: TXSDateTime;
   TarihTipi: String;
-  Taslak, ihracaat :  Boolean;
+  Taslak, ihracaat: Boolean;
 begin
   MemoLog.Lines.Clear;
 
   HTTPRIO1.HTTPWebNode.GetHTTPReqResp.UserName :=
     DMHizli.FQHizliKULLANICI.AsString;
-  HTTPRIO1.HTTPWebNode.GetHTTPReqResp.Password :=
-    DMHizli.FQHizliSIFRE.AsString;
-  Servis := GetIHizliService(false, DMHizli.FQHizliSERVIS.AsString,
-    HTTPRIO1);
+  HTTPRIO1.HTTPWebNode.GetHTTPReqResp.Password := DMHizli.FQHizliSIFRE.AsString;
+  Servis := GetIHizliService(false, DMHizli.FQHizliSERVIS.AsString, HTTPRIO1);
 
   if RadioButton1.Checked then
     TarihTipi := 'CreatedDate'
   else if RadioButton2.Checked then
     TarihTipi := 'IssueDate';
-  if LikaCheckBox1.Checked then Taslak := True else Taslak := False;
-  if LikaCheckBox2.Checked then ihracaat := True else ihracaat := False;
+  if LikaCheckBox1.Checked then
+    Taslak := True
+  else
+    Taslak := false;
+  if LikaCheckBox2.Checked then
+    ihracaat := True
+  else
+    ihracaat := false;
   StartDate := TXSDateTime.Create;
   EndDate := TXSDateTime.Create;
   StartDate.AsDateTime := DateTimePicker1.DateTime;
@@ -350,20 +351,20 @@ begin
   Cevap := Servis.GetDocumentList(SecilenFaturaTuru, TarihTipi, StartDate,
     EndDate, false, ihracaat, Taslak, 'ALL');
 
-    {
-      function  GetDocumentList(
-        const AppType: Integer; ÝÞLEM TÜRÜ
-        const DateType: string;  TARÝH
-        const StartDate: TXSDateTime;  BAÞLAMA TARÝHÝ
-        const EndDate: TXSDateTime;   BÝTÝÞ TARÝHÝ
-        const IsNew: Boolean;   * YENÝ
-        const IsExport: Boolean; * ÝHRACAAT
-        const IsDraft: Boolean;  * TASLAK
-        const TakenFromEntegrator: string):
-      DocumentList2; stdcall;
-}
+  {
+    function  GetDocumentList(
+    const AppType: Integer; ÝÞLEM TÜRÜ
+    const DateType: string;  TARÝH
+    const StartDate: TXSDateTime;  BAÞLAMA TARÝHÝ
+    const EndDate: TXSDateTime;   BÝTÝÞ TARÝHÝ
+    const IsNew: Boolean;   * YENÝ
+    const IsExport: Boolean; * ÝHRACAAT
+    const IsDraft: Boolean;  * TASLAK
+    const TakenFromEntegrator: string):
+    DocumentList2; stdcall;
+  }
 
-  VTGonderilenler.Close;
+  VTGonderilenler.cLOSE;
   VTGonderilenler.Clear;
   VTGonderilenler.Open;
   I := 0;
@@ -373,32 +374,43 @@ begin
     begin
       VTGonderilenler.Append;
       VTGonderilenlerAppType.AsInteger := Cevap.documents[I].AppType;
-  //    VTGonderilenlerCancelDate.AsDateTime := Cevap.documents[I].CancelDate.AsDateTime;
-      VTGonderilenlerCreateDate.AsDateTime := Cevap.documents[I].CreatedDate.AsDateTime;
-      VTGonderilenlerDocumentCurrency.AsString := Cevap.documents[I].DocumentCurrencyCode;
+      // VTGonderilenlerCancelDate.AsDateTime := Cevap.documents[I].CancelDate.AsDateTime;
+      VTGonderilenlerCreateDate.AsDateTime := Cevap.documents[I]
+        .CreatedDate.AsDateTime;
+      VTGonderilenlerDocumentCurrency.AsString := Cevap.documents[I]
+        .DocumentCurrencyCode;
       VTGonderilenlerDocumentId.AsString := Cevap.documents[I].DocumentId;
-      VTGonderilenlerDocumentTypeCode.AsString := Cevap.documents[I].DocumentTypeCode;
+      VTGonderilenlerDocumentTypeCode.AsString := Cevap.documents[I]
+        .DocumentTypeCode;
       VTGonderilenlerEnvelopeExp.AsString := Cevap.documents[I].EnvelopeExp;
-      VTGonderilenlerEnvelopeStatus.AsInteger := Cevap.documents[I].EnvelopeStatus;
+      VTGonderilenlerEnvelopeStatus.AsInteger := Cevap.documents[I]
+        .EnvelopeStatus;
       VTGonderilenlerEnvelopeUUID.AsString := Cevap.documents[I].UUID;
       VTGonderilenlerIsAccount.AsBoolean := Cevap.documents[I].IsAccount;
       VTGonderilenlerIsArchive.AsBoolean := Cevap.documents[I].IsArchive;
-      VTGonderilenlerIsInternetSale.AsBoolean := Cevap.documents[I].IsInternetSale;
+      VTGonderilenlerIsInternetSale.AsBoolean := Cevap.documents[I]
+        .IsInternetSale;
       VTGonderilenlerIsPrinted.AsBoolean := Cevap.documents[I].IsPrinted;
       VTGonderilenlerIsRead.AsBoolean := Cevap.documents[I].IsRead;
-      VTGonderilenlerIsTransferred.AsBoolean := Cevap.documents[I].IsTransferred;
-      VTGonderilenlerIssueDate.AsDateTime := Cevap.documents[I].IssueDate.AsDate;
-      VTGonderilenlerLocalReferenceId.AsString := Cevap.documents[I].LocalReferenceId;
+      VTGonderilenlerIsTransferred.AsBoolean := Cevap.documents[I]
+        .IsTransferred;
+      VTGonderilenlerIssueDate.AsDateTime := Cevap.documents[I]
+        .IssueDate.AsDate;
+      VTGonderilenlerLocalReferenceId.AsString := Cevap.documents[I]
+        .LocalReferenceId;
       VTGonderilenlerMessage.AsString := Cevap.documents[I].Messsage;
       VTGonderilenlerProfileId.AsString := Cevap.documents[I].ProfileID;
       VTGonderilenlerSendType.AsString := Cevap.documents[I].SendType;
       VTGonderilenlerStatus.AsInteger := Cevap.documents[I].Status;
       VTGonderilenlerStatus.AsString := Cevap.documents[I].StatusExp;
       VTGonderilenlerTargetAlias.AsString := Cevap.documents[I].TargetAlias;
-      VTGonderilenlerTargetIdentifier.AsString := Cevap.documents[I].TargetIdentifier;
+      VTGonderilenlerTargetIdentifier.AsString := Cevap.documents[I]
+        .TargetIdentifier;
       VTGonderilenlerTargetTitle.AsString := Cevap.documents[I].TargetTitle;
-      VTGonderilenlerPayableAmount.AsString := Cevap.documents[I].PayableAmount.DecimalString;
-      VTGonderilenlerTaxTotal.AsString := Cevap.documents[I].TaxTotal.DecimalString;
+      VTGonderilenlerPayableAmount.AsString := Cevap.documents[I]
+        .PayableAmount.DecimalString;
+      VTGonderilenlerTaxTotal.AsString := Cevap.documents[I]
+        .TaxTotal.DecimalString;
       VTGonderilenlerUUID.AsString := Cevap.documents[I].UUID;
       VTGonderilenler.Post;
       Inc(I);
@@ -435,21 +447,19 @@ begin
     6 - e-SMM Giden
     7 - e-Müstahsil Giden
   }
-    SecilenFaturaTuru := 2;
-
+  SecilenFaturaTuru := 2;
 
   Cevap := Servis.GetDocumentFile(SecilenFaturaTuru, ETTN, 'XML', false);
 
-
   if Cevap.IsSucceeded then
   begin
-    dosyayaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString +'\'+ ETTN +
-      '.' + 'XML', fmCreate);
+    dosyayaz := TFileStream.Create(DMHizli.FQHizliEFATURAYER.AsString + '\' +
+      ETTN + '.' + 'XML', fmCreate);
     dosyayaz.Write(Cevap.DocumentFile, length(Cevap.DocumentFile));
     dosyayaz.Free;
 
-    ShellExecute(Handle, 'open', PWideChar(DMHizli.FQHizliEFATURAYER.AsString +'\'
-      + ETTN + '.' + 'XML'), nil, nil, SW_SHOWNORMAL);
+    ShellExecute(Handle, 'open', PWideChar(DMHizli.FQHizliEFATURAYER.AsString +
+      '\' + ETTN + '.' + 'XML'), nil, nil, SW_SHOWNORMAL);
   end
   else
   begin

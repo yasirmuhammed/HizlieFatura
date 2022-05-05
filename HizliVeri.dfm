@@ -23,7 +23,7 @@ object FHizliVeri: TFHizliVeri
     Width = 736
     Height = 35
     Align = alTop
-    Caption = 'H'#305'zl'#305' '#304'leti'#351'im'
+    Caption = 'H'#305'zl'#305' Bili'#351'im'
     Cornerradius = 0
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
@@ -41,8 +41,6 @@ object FHizliVeri: TFHizliVeri
     BorderColor = clBlue
     UseAsGroupBox = False
     Transparent = False
-    ExplicitLeft = -3
-    ExplicitTop = -3
   end
   object PageControl1: TPageControl
     AlignWithMargins = True
@@ -270,13 +268,11 @@ object FHizliVeri: TFHizliVeri
             item
               Expanded = False
               FieldName = 'DocumentCurrencyCode'
-              Width = 64
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'DocumentCurrencyCodeExp'
-              Width = 64
               Visible = True
             end>
         end
@@ -1266,7 +1262,6 @@ object FHizliVeri: TFHizliVeri
             item
               Expanded = False
               FieldName = 'Kodu'
-              Width = 64
               Visible = True
             end
             item
@@ -1573,7 +1568,6 @@ object FHizliVeri: TFHizliVeri
             item
               Expanded = False
               FieldName = 'SendTypeExp'
-              Width = 64
               Visible = True
             end>
         end
@@ -1852,7 +1846,6 @@ object FHizliVeri: TFHizliVeri
             item
               Expanded = False
               FieldName = 'Orani'
-              Width = 64
               Visible = True
             end>
         end

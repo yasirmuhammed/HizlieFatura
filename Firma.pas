@@ -4,9 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DBCtrls, Mask, ExtCtrls, DBOnlineCombo, OnlineEdit,
-  Buttons, DBOnlineEdit, ExtDlgs, OnlineButton,
-  DBOnlineLookupCombo, OnlineCustomControl, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Dialogs, StdCtrls, DBCtrls, Mask, ExtCtrls,
+  Buttons, ExtDlgs, OnlineButton,
+  Data.DB, Vcl.Grids, Vcl.DBGrids,
+  DBOnlineEdit, DBOnlineLookupCombo;
 
 type
   TFFirma = class(TForm)
@@ -20,30 +21,31 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Panel4: TPanel;
-    DBOnlineEdit4: TDBOnlineEdit;
-    DBOnlineEdit7: TDBOnlineEdit;
-    DBOnlineEdit8: TDBOnlineEdit;
-    DBOnlineEdit10: TDBOnlineEdit;
-    BitBtn3: TOnlineButton;
-    DBOnlineEdit1: TDBOnlineEdit;
-    DBOnlineEdit2: TDBOnlineEdit;
-    DBOnlineEdit3: TDBOnlineEdit;
+    DBOnlineEdit4: TDBEdit;
+    DBOnlineEdit7: TDBEdit;
+    DBOnlineEdit8: TDBEdit;
+    DBOnlineEdit10: TDBEdit;
+    BitBtn3: TButton;
+    DBOnlineEdit1: TDBEdit;
+    DBOnlineEdit2: TDBEdit;
+    DBOnlineEdit3: TDBEdit;
     DBImage1: TDBImage;
     Label4: TLabel;
     Label5: TLabel;
     OpenPictureDialog1: TOpenPictureDialog;
-    DBOnlineEdit5: TDBOnlineEdit;
-    DBOnlineEdit6: TDBOnlineEdit;
+    DBOnlineEdit5: TDBEdit;
+    DBOnlineEdit6: TDBEdit;
     Label8: TLabel;
     Label9: TLabel;
-    DBOnlineEdit9: TDBOnlineEdit;
-    DBOnlineEdit11: TDBOnlineEdit;
+    DBOnlineEdit9: TDBEdit;
+    DBOnlineEdit11: TDBEdit;
     Label12: TLabel;
     DBOnlineLookupCombo2: TDBOnlineLookupCombo;
     Label11: TLabel;
     DBOnlineLookupCombo1: TDBOnlineLookupCombo;
     Label10: TLabel;
     DBOnlineLookupCombo3: TDBOnlineLookupCombo;
+
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn3Click(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
@@ -69,24 +71,24 @@ uses SabitDM, Ana;
 
 procedure TFFirma.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-        if DMSabit.FQFirma.Modified then
-                DMSabit.FQFirma.Post;
-        Action := caFree;
+  if DMSabit.FQFirma.Modified then
+    DMSabit.FQFirma.Post;
+  Action := caFree;
 end;
 
 procedure TFFirma.BitBtn3Click(Sender: TObject);
 begin
-        Close;
+  Close;
 end;
 
 procedure TFFirma.FormKeyPress(Sender: TObject; var Key: Char);
 begin
   if (Key = #13) then
   begin
-    if (ActiveControl is TOnlineEdit) or (ActiveControl is TDBOnlineEdit) or
-         (ActiveControl is TDBOnlineCombo)   then
+    if (ActiveControl is TEdit) or (ActiveControl is TDBEdit) or
+      (ActiveControl is TDBComboBox) then
     begin
-      Key:=#0;
+      Key := #0;
       Perform(WM_NEXTDLGCTL, 0, 0);
     end;
   end;
@@ -94,39 +96,38 @@ end;
 
 procedure TFFirma.GroupBox1Exit(Sender: TObject);
 begin
-        if (DMSabit.FQFirma.Modified=True) Then
-                DMSabit.FQFirma.Post;
+  if (DMSabit.FQFirma.Modified = True) Then
+    DMSabit.FQFirma.Post;
 end;
 
-procedure TFFirma.DBOnlineCombo1KeyPress(Sender: TObject;
-  var Key: Char);
+procedure TFFirma.DBOnlineCombo1KeyPress(Sender: TObject; var Key: Char);
 begin
-        DBOnlineEdit10.SetFocus;
+  DBOnlineEdit10.SetFocus;
 end;
 
 procedure TFFirma.DBImage1Click(Sender: TObject);
 begin
-        DMSabit.FQFirma.Edit;
-        if OpenPictureDialog1.Execute Then
-                DMSabit.FQFirmaLOGO.LoadFromFile(OpenPictureDialog1.FileName );
+  DMSabit.FQFirma.Edit;
+  if OpenPictureDialog1.Execute Then
+    DMSabit.FQFirmaLOGO.LoadFromFile(OpenPictureDialog1.FileName);
 
 end;
 
 procedure TFFirma.FormShow(Sender: TObject);
 begin
-        DMSabit.FQFirma.Open;
-        DMSabit.FQSehir.Open;
-        DMSabit.FQilce.Open;
+  DMSabit.FQFirma.Open;
+  DMSabit.FQSehir.Open;
+  DMSabit.FQilce.Open;
 end;
 
 procedure TFFirma.DBImage1KeyPress(Sender: TObject; var Key: Char);
 begin
-        if key=#13 Then
-        Begin
-                DMSabit.FQFirma.Edit;
-                if OpenPictureDialog1.Execute Then
-                        DMSabit.FQFirmaLOGO.LoadFromFile(OpenPictureDialog1.FileName );
-                end;
+  if Key = #13 Then
+  Begin
+    DMSabit.FQFirma.Edit;
+    if OpenPictureDialog1.Execute Then
+      DMSabit.FQFirmaLOGO.LoadFromFile(OpenPictureDialog1.FileName);
+  end;
 
 end;
 

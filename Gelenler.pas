@@ -6,11 +6,11 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, MemDS, VirtualTable, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls, OnlineCustomControl, OnlineButton, Vcl.ComCtrls,
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.ComCtrls,
   Vcl.ExtCtrls, LikaGradPanel, Soap.XSBuiltIns, Vcl.Menus, Winapi.ShellAPI,
   Vcl.Buttons, Soap.InvokeRegistry, System.Net.URLClient, Soap.Rio,
-  Soap.SOAPHTTPClient, Vcl.Mask, HizliService, LikaCustomControl, LikaCheckBox,
-  Xml.XMLIntf,Xml.XMLDoc;
+  Soap.SOAPHTTPClient, Vcl.Mask, HizliService,
+  Xml.XMLIntf, Xml.XMLDoc, LikaCustomControl, LikaCheckBox ;
 
 type
   TFGelenler = class(TForm)
@@ -81,6 +81,9 @@ type
     StGridGelenDetay: TStringGrid;
     GroupBox6: TGroupBox;
     DBGrid1: TDBGrid;
+    Splitter2: TSplitter;
+    Splitter3: TSplitter;
+    Splitter1: TSplitter;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
     procedure FormShow(Sender: TObject);
@@ -109,7 +112,7 @@ type
 var
   FGelenler: TFGelenler;
   SecilenFaturaTuru: Integer;
-  sutun,satir, sutun2 : Integer;
+  sutun, satir, sutun2: Integer;
 
 implementation
 
@@ -309,7 +312,6 @@ begin
   MemoLog.Lines.Add(FormatDateTime('hh:nn:ss', now) + ' ' + Str1);
 end;
 
-
 procedure TFGelenler.NodeGidenOkumaDetay(A: IXMLNode);
 VAR
   ANode: IXMLNode;
@@ -330,7 +332,6 @@ Begin
         StGridGelenDetay.cells[sutun2, satir] := ANode.Text;
         sutun2 := sutun2 + 1;
 
-
         if ANode.LocalName = 'PriceAmount' then
         Begin
           satir := satir + 1;
@@ -346,7 +347,6 @@ Begin
     end;
   until ANode = Nil;
 End;
-
 
 procedure TFGelenler.NodeGidenOkumaMaster(A: IXMLNode);
 VAR
@@ -379,7 +379,6 @@ Begin
   until ANode = Nil;
 End;
 
-
 procedure TFGelenler.N2Click(Sender: TObject);
 Var
   Servis: IHizliService;
@@ -410,13 +409,13 @@ begin
   Cevap := Servis.GetDocumentFile(SecilenFaturaTuru, ETTN, 'XML', false);
   if Cevap.IsSucceeded then
   begin
-    DosyaYaz := TFileStream.Create(GetCurrentDir + '\' +
-      ETTN + '.' + 'XML', fmCreate);
+    DosyaYaz := TFileStream.Create(GetCurrentDir + '\' + ETTN + '.' + 'XML',
+      fmCreate);
     DosyaYaz.Write(Cevap.DocumentFile, Length(Cevap.DocumentFile));
     DosyaYaz.Free;
 
-    ShellExecute(Handle, 'open', PWideChar(GetCurrentDir +
-      '\' + ETTN + '.' + 'XML'), nil, nil, SW_SHOWNORMAL);
+    ShellExecute(Handle, 'open', PWideChar(GetCurrentDir + '\' + ETTN + '.' +
+      'XML'), nil, nil, SW_SHOWNORMAL);
   end
   else
   begin
@@ -426,8 +425,7 @@ begin
   sutun := -1;
   satir := 1;
   StGridGelenMaster.cells[0, 0] := 'Sýra';
-  Dosya := LoadXMLDocument(PWideChar(GetCurrentDir + '\' +
-    ETTN + '.' + 'XML'));
+  Dosya := LoadXMLDocument(PWideChar(GetCurrentDir + '\' + ETTN + '.' + 'XML'));
   Dosya.Active := True;
   AnaNode := Dosya.DocumentElement.ChildNodes.First;
   repeat
@@ -465,9 +463,6 @@ begin
     AnaNode := AnaNode.NextSibling;
   until AnaNode = Nil;
 end;
-
-
-
 
 procedure TFGelenler.PDFGster1Click(Sender: TObject);
 var

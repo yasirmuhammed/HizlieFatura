@@ -11,7 +11,6 @@ uses
   islemlerDM in 'islemlerDM.pas' {DMislemler: TDataModule},
   Taslaklar in 'Taslaklar.pas' {FTaslaklar},
   eFaturaOlustur in 'eFaturaOlustur.pas' {FeFaturaOlustur},
-  CariKart in 'CariKart.pas' {FCariKart},
   Gonderilenler in 'Gonderilenler.pas' {FGonderilenler},
   SabitDM in 'SabitDM.pas' {DMSabit: TDataModule},
   iller in 'iller.pas' {Filler},
@@ -20,7 +19,8 @@ uses
   islemler in 'islemler.pas' {Fislemler},
   Vcl.Themes,
   Vcl.Styles,
-  About in 'About.pas' {FAboutBox};
+  About in 'About.pas' {FAboutBox},
+  CariKart in 'CariKart.pas' {FCariKart};
 
 {$R *.res}
 

@@ -27,7 +27,40 @@ object FGelenler: TFGelenler
     Align = alClient
     BevelInner = bvLowered
     TabOrder = 0
-    ExplicitHeight = 445
+    object Splitter2: TSplitter
+      Left = 2
+      Top = 410
+      Width = 976
+      Height = 7
+      Cursor = crVSplit
+      Align = alBottom
+      Color = clBlue
+      ParentColor = False
+      ExplicitTop = 424
+    end
+    object Splitter3: TSplitter
+      Left = 2
+      Top = 275
+      Width = 976
+      Height = 7
+      Cursor = crVSplit
+      Align = alBottom
+      Color = clBlue
+      ParentColor = False
+      ExplicitLeft = -3
+      ExplicitTop = 345
+    end
+    object Splitter1: TSplitter
+      Left = 2
+      Top = 545
+      Width = 976
+      Height = 7
+      Cursor = crVSplit
+      Align = alBottom
+      Color = clBlue
+      ParentColor = False
+      ExplicitTop = 399
+    end
     object Panel2: TPanel
       Left = 2
       Top = 49
@@ -37,7 +70,6 @@ object FGelenler: TFGelenler
       BevelOuter = bvNone
       Color = 6730751
       TabOrder = 0
-      ExplicitTop = 46
       object BtnListele: TSpeedButton
         Left = 583
         Top = 21
@@ -222,7 +254,7 @@ object FGelenler: TFGelenler
           74)
         object SpeedButton2: TSpeedButton
           Left = 246
-          Top = 10
+          Top = 3
           Width = 82
           Height = 28
           Glyph.Data = {
@@ -352,8 +384,6 @@ object FGelenler: TFGelenler
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 4
-        ExplicitLeft = 191
-        ExplicitHeight = 83
         object CbxGidenFaturaTuru: TComboBox
           Left = 8
           Top = 36
@@ -384,7 +414,6 @@ object FGelenler: TFGelenler
       Align = alBottom
       ScrollBars = ssBoth
       TabOrder = 1
-      ExplicitTop = 267
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -407,24 +436,33 @@ object FGelenler: TFGelenler
     end
     object GroupBox4: TGroupBox
       Left = 2
-      Top = 447
+      Top = 282
       Width = 976
-      Height = 105
+      Height = 128
       Align = alBottom
       Caption = ' Fatura Master '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 3
-      ExplicitTop = 338
       object StGridGelenMaster: TStringGrid
         Left = 2
         Top = 15
         Width = 972
-        Height = 88
+        Height = 111
         Align = alClient
         ColCount = 30
         RowCount = 10
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 3
-        ExplicitTop = 14
         RowHeights = (
           24
           24
@@ -440,25 +478,34 @@ object FGelenler: TFGelenler
     end
     object GroupBox5: TGroupBox
       Left = 2
-      Top = 342
+      Top = 417
       Width = 976
-      Height = 105
+      Height = 128
       Align = alBottom
       Caption = ' Fatura Detay '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 4
-      ExplicitTop = 447
       object StGridGelenDetay: TStringGrid
         Left = 2
         Top = 15
         Width = 972
-        Height = 88
+        Height = 111
         Align = alClient
         ColCount = 30
         DefaultColWidth = 300
         RowCount = 10
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 11
-        ExplicitTop = 11
         RowHeights = (
           24
           24
@@ -476,29 +523,37 @@ object FGelenler: TFGelenler
       Left = 2
       Top = 129
       Width = 976
-      Height = 213
+      Height = 146
       Align = alClient
       Caption = ' Gelen Faturalar '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 5
-      ExplicitLeft = 394
-      ExplicitTop = 312
-      ExplicitWidth = 185
-      ExplicitHeight = 105
       object DBGrid1: TDBGrid
         AlignWithMargins = True
         Left = 5
         Top = 18
         Width = 966
-        Height = 190
+        Height = 123
         Align = alClient
         DataSource = DSGonderilenler
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
         PopupMenu = PMGelenFatura
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
+        TitleFont.Style = [fsBold]
         Columns = <
           item
             Expanded = False
@@ -679,7 +734,6 @@ object FGelenler: TFGelenler
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 451
     DesignSize = (
       986
       35)
